@@ -44,15 +44,11 @@ function getSchedule() {
 }
 
 function colorize() {
-    // var colorizeTime = (new Date()).toTimeString().substr(0,2);
-    // var test = new Date();
-    // console.log(test.toLocaleString('en-GB'));
-    // var colorizeTime = 10;
-    // console.log(colorizeTime);
+
 
     var colorizeTime = new Date();
-    var hours = colorizeTime.getHours();
-    console.log(hours);
+    colorizeTime = colorizeTime.toLocaleString('en-US', {hour: 'numeric', hour12: false});
+     
     
     if (colorizeTime === '09') {
         $('#nine').addClass('present');
@@ -70,23 +66,23 @@ function colorize() {
         $('#twelve').addClass('present');
         $('#one ,#two ,#three ,#four ,#five').addClass('future');
     };
-    if (colorizeTime === '01') {
+    if (colorizeTime === '13') {
         $('#one').addClass('present');
         $('#two ,#three ,#four ,#five').addClass('future');
     };
-    if (colorizeTime === '02') {
+    if (colorizeTime === '14') {
         $('#two').addClass('present');
         $('#three ,#four ,#five').addClass('future');
     };
-    if (colorizeTime === '03') {
+    if (colorizeTime === '15') {
         $('#three').addClass('present');
         $('#four ,#five').addClass('future');
     };
-    if (colorizeTime === '04') {
+    if (colorizeTime === '16') {
         $('#four').addClass('present');
         $('#five').addClass('future');
     };
-    if (colorizeTime === '05') {
+    if (colorizeTime === '17') {
         $('#five').addClass('present');
     };
    
