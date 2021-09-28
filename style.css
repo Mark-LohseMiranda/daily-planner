@@ -5,7 +5,7 @@
 }
 
 body {
-    background: lightseagreen;
+  background: lightseagreen;
 }
 
 header {
@@ -42,7 +42,6 @@ header h3 {
   border-top: 1px solid black;
 }
 
-
 textarea {
   margin-bottom: 1px;
   border-style: none;
@@ -55,7 +54,7 @@ textarea {
 .saveBtn {
   height: auto;
   min-width: 50px;
-  background-image: url('./floppy-icon.png');
+  background-image: url("./floppy-icon.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: lightblue;
@@ -64,29 +63,27 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
 }
 
 .saveBtn:after {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: all 1s;
-    border-radius: 0 10px 10px 0;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 1s;
+  border-radius: 0 10px 10px 0;
 }
 
 .saveBtn:hover:after {
-    opacity: 1;
+  opacity: 1;
 }
 
 .present {
-    background: lightsalmon;
+  background: lightsalmon;
 }
 
 .future {
-    background: lightgreen;
+  background: lightgreen;
 }
