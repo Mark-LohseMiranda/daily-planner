@@ -83,4 +83,10 @@ textarea {
     opacity: 1;
 }
 
+.present {
+    background: lightsalmon;
+}
 
+.future {
+    background: lightgreen;
+}
