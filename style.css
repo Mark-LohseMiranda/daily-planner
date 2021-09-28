@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background: lightseagreen;
+}
+
+header {
+  text-align: center;
+  border-bottom: 5px solid black;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 64px;
+}
+
+header h3 {
+  padding: 10px;
+}
+
+.hours {
+  display: inline-flex;
+
+  margin-left: 5%;
+}
+
+.time {
+  padding-top: 10px;
+  padding-left: 20px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  min-width: 75px;
+  text-align: right;
+}
+
+.top {
+  border-top: 1px solid black;
+}
+
+.textBox {
+  border-bottom: 1px solid white;
+  background: gray;
+}
+
+textarea {
+  border-style: none;
+  resize: none;
+  width: 100%;
+  padding-left: 10px;
+  background: gray;
+}
+
+.saveBtn {
+  height: auto;
+  min-width: 50px;
+  background-image: url('./floppy-icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: lightblue;
+  border-bottom: 1px solid white;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.saveBtn:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 1s;
+    border-radius: 0 10px 10px 0;
+}
+
+.saveBtn:hover:after {
+    opacity: 1;
+}
+
