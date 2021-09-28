@@ -1,4 +1,18 @@
 var dateTime = $("#dateTime");
+var saveBtn = $(".saveBtn");
+
+var schedule = {
+        nine: "",
+        ten: "",
+        eleven: "",
+        twelve: "",
+        one: "",
+        two: "",
+        three: "",
+        four: "",
+        five: "",
+    }
+
 
 function displayDateTime() {
   var displayTime = setInterval(function () {
@@ -16,4 +30,26 @@ function displayDateTime() {
   }, 1000);
 }
 
+function getSchedule() {
+    var storedSchedule = JSON.parse(localStorage.getItem("dailyPlanner"));
+
+    if (storedSchedule !== null) {
+        schedule = storedSchedule;
+        $.each(schedule, function(key, value) {
+            var display = $('.' + key);
+            display.text(value);
+        })
+    }
+}
+
 displayDateTime();
+getSchedule();
+
+
+saveBtn.on('click', function(event) {
+    var content = $(event.target).siblings("textarea").val();
+    var className = $(event.target).siblings("textarea").attr('class');
+    schedule[`${className}`] = content;
+    localStorage.setItem("dailyPlanner", JSON.stringify(schedule));
+})
+

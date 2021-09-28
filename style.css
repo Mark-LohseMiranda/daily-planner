@@ -42,12 +42,9 @@ header h3 {
   border-top: 1px solid black;
 }
 
-.textBox {
-  border-bottom: 1px solid white;
-  background: gray;
-}
 
 textarea {
+  margin-bottom: 1px;
   border-style: none;
   resize: none;
   width: 100%;
@@ -85,4 +82,5 @@ textarea {
 .saveBtn:hover:after {
     opacity: 1;
 }
+
 
