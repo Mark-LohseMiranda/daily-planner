@@ -13,12 +13,16 @@ var schedule = {
   five: "",
 };
 
+// get current time from moment() and display it every second
+
 function displayDateTime() {
   var displayTime = setInterval(function () {
     var date = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
     dateTime.text(date);
   }, 1000);
 }
+
+// get locally saved data, if any, and deliver it to the schedule object
 
 function getSchedule() {
   var storedSchedule = JSON.parse(localStorage.getItem("dailyPlanner"));
@@ -31,6 +35,9 @@ function getSchedule() {
     });
   }
 }
+
+// get current 24 clock hour from moment() and then add present or future to 
+// each hour block - they default to the past color
 
 function colorize() {
   var colorizeTime = moment().format("H");
@@ -74,9 +81,13 @@ function colorize() {
   }
 }
 
+// display the time, retrieve the schedule, and color the present and future
+
 displayDateTime();
 getSchedule();
 colorize();
+
+// listen for clicks on the save button then save the object to localStorage
 
 saveBtn.on("click", function (event) {
   var content = $(event.target).siblings("textarea").val();
