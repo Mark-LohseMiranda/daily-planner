@@ -15,17 +15,8 @@ var schedule = {
 
 function displayDateTime() {
   var displayTime = setInterval(function () {
-    var date = new Date();
-    var time = new Date().toTimeString().substr(0, 8);
-    var fullDate =
-      date.toLocaleString("default", { weekday: "long" }) +
-      ", " +
-      date.toLocaleString("default", { month: "long" }) +
-      " " +
-      date.getDate() +
-      " " +
-      date.getFullYear();
-    dateTime.text(fullDate + " " + time);
+    var date = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+    dateTime.text(date);
   }, 1000);
 }
 
@@ -42,13 +33,9 @@ function getSchedule() {
 }
 
 function colorize() {
-  var colorizeTime = new Date();
-  colorizeTime = colorizeTime.toLocaleString("en-US", {
-    hour: "numeric",
-    hour12: false,
-  });
+  var colorizeTime = moment().format("H");
 
-  if (colorizeTime === "09") {
+  if (colorizeTime === "9") {
     $("#nine").addClass("present");
     $("#ten ,#eleven ,#twelve ,#one ,#two ,#three ,#four ,#five").addClass(
       "future"
